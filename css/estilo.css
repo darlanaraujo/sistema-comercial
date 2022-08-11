@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: sans-serif;
+  font-weight: 200;
+  letter-spacing: 1.5px;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  width: 750px;
+  height: 500px;
+  border-radius: 12px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.modal .form-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 30px;
+}
+
+.modal .form-container .titulo {
+  font-size: 42px;
+  color: #282828;
+}
+
+.modal .form-container .wrapper-midias {
+  display: flex;
+  gap: 30px;
+}
+
+.modal .form-container .wrapper-midias .midias {
+  width: 40px;
+  height: 40px;
+  background-color: #ebebeb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #282828;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.modal .form-container .wrapper-midias .midias:hover {
+  background-color: #0096c4;
+  color: white;
+}
+
+.modal .form-container .texto {
+  color: #282828;
+}
+
+.modal .form-container .wrapper-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.modal .form-container .wrapper-input .input {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ebebeb;
+  padding: 5px 15px;
+  outline: none;
+  color: #282828;
+}
+
+.modal .form-container .wrapper-input .link {
+  color: #282828;
+  border-bottom: 2px solid #fff;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.modal .form-container .wrapper-input .link:hover {
+  border-bottom: 2px solid #0096c4;
+}
+
+.modal .form-container .btn-form {
+  width: 200px;
+  height: 45px;
+  background: none;
+  border: solid 2px #0096c4;
+  background-color: #0096c4;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.modal .form-container .btn-form:hover {
+  background: white;
+  color: #0096c4;
+}
+
+.modal .form-container .btn-form.btn-cadastrar {
+  background: white;
+  color: #0096c4;
+}
+
+.modal .form-container .btn-form.btn-cadastrar:hover {
+  background-color: #0096c4;
+  color: white;
+}
