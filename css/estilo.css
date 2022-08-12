@@ -9,6 +9,19 @@
   letter-spacing: 1.5px;
 }
 
+@keyframes alerta {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+body {
+  overflow: hidden;
+}
+
 .main {
   width: 100%;
   height: 100vh;
@@ -27,7 +40,22 @@
   overflow: hidden;
 }
 
+.modal.move .overlay-container {
+  transform: translateX(0%);
+}
+
+.modal.move .overlay:nth-child(2) {
+  opacity: 0;
+  z-index: -1;
+}
+
 .modal .form-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.modal .form-container .form {
   width: 50%;
   height: 100%;
   display: flex;
@@ -37,41 +65,45 @@
   padding: 50px 30px;
 }
 
-.modal .form-container .titulo {
+.modal .form-container .form .titulo {
   font-size: 42px;
   color: #282828;
 }
 
-.modal .form-container .wrapper-midias {
+.modal .form-container .form .wrapper-midias {
   display: flex;
   gap: 30px;
 }
 
-.modal .form-container .wrapper-midias .midias {
+.modal .form-container .form .wrapper-midias .midias {
   width: 40px;
   height: 40px;
-  background-color: #ebebeb;
+  background-color: #0096c4;
+  color: white;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #282828;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
-  font-size: 20px;
+  font-size: 19px;
   transition: .5s;
   cursor: pointer;
 }
 
-.modal .form-container .wrapper-midias .midias:hover {
-  background-color: #0096c4;
-  color: white;
+.modal .form-container .form .wrapper-midias .midias i {
+  margin-left: 2px;
 }
 
-.modal .form-container .texto {
+.modal .form-container .form .wrapper-midias .midias:hover {
+  background-color: white;
+  color: #0096c4;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+.modal .form-container .form .texto {
   color: #282828;
 }
 
-.modal .form-container .wrapper-input {
+.modal .form-container .form .wrapper-input {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -79,29 +111,28 @@
   gap: 15px;
 }
 
-.modal .form-container .wrapper-input .input {
+.modal .form-container .form .wrapper-input .input {
   width: 100%;
   height: 45px;
   border-radius: 5px;
-  border: none;
-  background-color: #ebebeb;
+  border: solid 2px #0096c4;
   padding: 5px 15px;
   outline: none;
   color: #282828;
 }
 
-.modal .form-container .wrapper-input .link {
+.modal .form-container .form .wrapper-input .link {
   color: #282828;
   border-bottom: 2px solid #fff;
   cursor: pointer;
   transition: .5s;
 }
 
-.modal .form-container .wrapper-input .link:hover {
+.modal .form-container .form .wrapper-input .link:hover {
   border-bottom: 2px solid #0096c4;
 }
 
-.modal .form-container .btn-form {
+.modal .form-container .form .btn-form {
   width: 200px;
   height: 45px;
   background: none;
@@ -114,17 +145,116 @@
   cursor: pointer;
 }
 
-.modal .form-container .btn-form:hover {
+.modal .form-container .form .btn-form:hover {
+  background: white;
+  color: #0096c4;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+.modal .form-container .form .btn-form.btn-cadastrar {
   background: white;
   color: #0096c4;
 }
 
-.modal .form-container .btn-form.btn-cadastrar {
-  background: white;
-  color: #0096c4;
-}
-
-.modal .form-container .btn-form.btn-cadastrar:hover {
+.modal .form-container .form .btn-form.btn-cadastrar:hover {
   background-color: #0096c4;
   color: white;
+}
+
+.modal .overlay-container {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  transform: translatex(100%);
+  transition: 1s;
+}
+
+.modal .overlay-container .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding: 70px 30px;
+  background-color: #0096c4;
+  color: white;
+  transition: 1s;
+}
+
+.modal .overlay-container .overlay .logo {
+  font-size: 60px;
+}
+
+.modal .overlay-container .overlay .titulo {
+  font-size: 34px;
+}
+
+.modal .overlay-container .overlay .btn-overlay {
+  width: 200px;
+  height: 45px;
+  background: none;
+  border: solid 2px white;
+  background: white;
+  color: #0096c4;
+  font-size: 16px;
+  border-radius: 30px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.modal .overlay-container .overlay .btn-overlay:hover {
+  background-color: #0096c4;
+  color: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+.container-alerta .modal-alerta {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px 0 0 10px;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  align-items: center;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: 1s;
+  animation: alerta 1s reverse forwards;
+}
+
+.container-alerta .modal-alerta.active {
+  transition: 1s;
+  animation: alerta 1s;
+}
+
+.container-alerta .modal-alerta > div {
+  padding: 15px;
+}
+
+.container-alerta .modal-alerta .logo {
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  background-color: #0096c4;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-alerta .modal-alerta .titulo {
+  text-transform: uppercase;
+  color: #0096c4;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.container-alerta .modal-alerta .texto {
+  font-size: 14px;
 }

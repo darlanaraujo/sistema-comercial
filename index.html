@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,42 +12,81 @@
     <!-- Estilo -->
     <link rel="stylesheet" href="css/estilo.css">
 
+    <!-- Script -->
+    <script src="js/login.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
+
     <title>#Sistema Comercial - Login</title>
 </head>
+
 <body>
     <main class="main">
-        <section class="modal">
+        <section class="modal" id="modal">
             <div class="form-container">
-                <h1 class="titulo">Entrar com</h1>
-                <div class="wrapper-midias">
-                    <a href="#" class="midias"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="midias"><i class="fa-brands fa-github-alt"></i></a>
-                    <a href="#" class="midias"><i class="fa-brands fa-facebook-f"></i></a>
+                <div class="form form-login">
+                    <h1 class="titulo">Entrar com</h1>
+                    <form action="" class="wrapper-input">
+                        <input class="input" type="email" placeholder="E-mail" required autofocus>
+                        <input class="input" type="password" placeholder="Senha" required>
+                        <a href="#" class="link">Esqueceu a senha?</a>
+                    </form>
+                    <button class="btn-form btn-logar">Logar</button>
+                    <p class="texto">Já conhece nossas mídias?</p>
+                    <div class="wrapper-midias">
+                        <a href="#" class="midias"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="midias"><i class="fa-brands fa-github-alt"></i></a>
+                        <a href="#" class="midias"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+
                 </div>
-                <p class="texto">ou utilize sua conta</p>
-                <form action="" class="wrapper-input">
-                    <input class="input" type="email" placeholder="E-mail" required="required">
-                    <input class="input" type="password" placeholder="Senha" required="required">
-                    <a href="#" class="link">Esqueceu a senha?</a>
-                </form>
-                <button class="btn-form btn-logar">Logar</button>
+
+                <div class="form form-cadastro">
+                    <h1 class="titulo">Criar conta</h1>
+                    <form action="" class="wrapper-input">
+                        <input class="input" id="txtNome" type="text" placeholder="Nome completo" required autofocus>
+                        <input class="input" id="txtEmail" type="email" placeholder="E-mail" required>
+                        <input class="input" id="txtSenha" type="password" placeholder="Senha" required>
+                    </form>
+                    <button class="btn-form btn-cadastrar" id="btnCadastrar">Cadastrar</button>
+                    <p class="texto">Já conhece nossas mídias?</p>
+                    <div class="wrapper-midias">
+                        <a href="#" class="midias"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="midias"><i class="fa-brands fa-github-alt"></i></a>
+                        <a href="#" class="midias"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="form-container">
-                <h1 class="titulo">Criar conta</h1>
-                <div class="wrapper-midias">
-                    <a href="#" class="midias"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="midias"><i class="fa-brands fa-github-alt"></i></a>
-                    <a href="#" class="midias"><i class="fa-brands fa-facebook-f"></i></a>
+
+            <div class="overlay-container">
+                <div class="overlay">
+                    <span class="logo"><i class="fa-brands fa-shopify"></i></span>
+                    <h1 class="titulo">Já tem uma conta?</h1>
+                    <p class="texto">Faça o login com suas informações para ter acesso a nossa plataforma.</p>
+                    <button class="btn-overlay" id="btnOverEntrar">Entrar</button>
                 </div>
-                <p class="texto">ou cadastre seu e-mail</p>
-                <form action="" class="wrapper-input">
-                    <input class="input" type="text" placeholder="Nome completo" required="required">
-                    <input class="input" type="email" placeholder="E-mail" required="required">
-                    <input class="input" type="password" placeholder="Senha" required="required">
-                </form>
-                <button class="btn-form btn-cadastrar">Cadastrar</button>
+
+                <div class="overlay">
+                    <span class="logo"><i class="fa-brands fa-shopify"></i></span>
+                    <h1 class="titulo">Seja bem-vindo!</h1>
+                    <p class="texto">Cadastre-se e comece a usar nossa plataforma on-line.</p>
+                    <button class="btn-overlay" id="btnOverCadastrar">Cadastrar</button>
+                </div>
             </div>
         </section>
+
     </main>
+
+    <section class="container-alerta">
+        <div class="modal-alerta" id="modalAlerta">
+            <span class="logo"><i class="fa-brands fa-shopify"></i></span>
+            <div>
+                <h2 class="titulo">Atenção!</h2>
+                <p class="texto">Preencha todos os dados...</p>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
