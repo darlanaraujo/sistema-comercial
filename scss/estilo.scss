@@ -3,6 +3,10 @@
 @import 'animacoes';
 
 body {
+    background-image: url('../img/background.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
 }
 
@@ -126,7 +130,7 @@ body {
                 background-color: $corPrimaria;
                 color: white;
                 font-size: 16px;
-                border-radius: 30px;
+                border-radius: 10px;
                 transition: .5s;
                 cursor: pointer;
 
@@ -134,16 +138,6 @@ body {
                     background: white;
                     color: $corPrimaria;
                     box-shadow: $corSombra
-                }
-
-                &.btn-cadastrar {
-                    background: white;
-                    color: $corPrimaria;
-
-                    &:hover {
-                        background-color: $corPrimaria;
-                        color: white;
-                    }
                 }
             }
         }
@@ -188,7 +182,7 @@ body {
                 background: white;
                 color: $corPrimaria;
                 font-size: 16px;
-                border-radius: 30px;
+                border-radius: 10px;
                 transition: .5s;
                 cursor: pointer;
 
@@ -216,8 +210,6 @@ body {
         right: 0;
         top: 20px;
         width: 400px;
-        // height: 70px;
-        // padding: 15px;
         background-color: white;
         border-radius: 10px 0 0 10px;
         display: grid;
@@ -226,15 +218,25 @@ body {
         box-shadow: $corSombra;
         overflow: hidden;
         transition: 1s;
-        animation: alerta 1s reverse forwards;
+        animation: alerta-out 1s forwards;
         
         &.active {
             transition: 1s;
-            animation: alerta 1s;
+            animation: alerta-enter 1s forwards;
         }
 
         & > div {
             padding: 15px;
+        }
+
+        &.alerta-erro {
+            .logo {
+                background-color: $corErro !important;
+            }
+
+            .titulo {
+                color: $corErro !important;
+            }
         }
 
         .logo {

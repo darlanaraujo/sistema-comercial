@@ -1,8 +1,17 @@
-@keyframes alerta {
+@keyframes alerta-enter {
     from {
         transform: translateX(100%);
     }
     to {
         transform: translateX(0%);
+    }
+}
+
+@keyframes alerta-out {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
     }
 }

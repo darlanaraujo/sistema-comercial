@@ -9,7 +9,7 @@
   letter-spacing: 1.5px;
 }
 
-@keyframes alerta {
+@keyframes alerta-enter {
   from {
     transform: translateX(100%);
   }
@@ -18,7 +18,20 @@
   }
 }
 
+@keyframes alerta-out {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
 body {
+  background-image: url("../img/background.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
 }
 
@@ -140,7 +153,7 @@ body {
   background-color: #0096c4;
   color: white;
   font-size: 16px;
-  border-radius: 30px;
+  border-radius: 10px;
   transition: .5s;
   cursor: pointer;
 }
@@ -149,16 +162,6 @@ body {
   background: white;
   color: #0096c4;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
-}
-
-.modal .form-container .form .btn-form.btn-cadastrar {
-  background: white;
-  color: #0096c4;
-}
-
-.modal .form-container .form .btn-form.btn-cadastrar:hover {
-  background-color: #0096c4;
-  color: white;
 }
 
 .modal .overlay-container {
@@ -200,7 +203,7 @@ body {
   background: white;
   color: #0096c4;
   font-size: 16px;
-  border-radius: 30px;
+  border-radius: 10px;
   transition: .5s;
   cursor: pointer;
 }
@@ -224,16 +227,24 @@ body {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   transition: 1s;
-  animation: alerta 1s reverse forwards;
+  animation: alerta-out 1s forwards;
 }
 
 .container-alerta .modal-alerta.active {
   transition: 1s;
-  animation: alerta 1s;
+  animation: alerta-enter 1s forwards;
 }
 
 .container-alerta .modal-alerta > div {
   padding: 15px;
+}
+
+.container-alerta .modal-alerta.alerta-erro .logo {
+  background-color: #c40000 !important;
+}
+
+.container-alerta .modal-alerta.alerta-erro .titulo {
+  color: #c40000 !important;
 }
 
 .container-alerta .modal-alerta .logo {
