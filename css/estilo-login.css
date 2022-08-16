@@ -11,7 +11,7 @@
 
 @keyframes alerta-enter {
   from {
-    transform: translateX(100%);
+    transform: translateX(110%);
   }
   to {
     transform: translateX(0%);
@@ -23,7 +23,7 @@
     transform: translateX(0%);
   }
   to {
-    transform: translateX(100%);
+    transform: translateX(110%);
   }
 }
 
@@ -136,7 +136,7 @@ body {
 
 .modal .form-container .form .wrapper-input .link {
   color: #282828;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #f0f0f0;
   cursor: pointer;
   transition: .5s;
 }

@@ -93,6 +93,15 @@ const cadastrarUsuario = () => {
 
 };
 btnCadastrar.addEventListener('click', cadastrarUsuario);
+txtSetSenha.addEventListener('keydown', ({key}) => {
+    if(key === 'Enter') {
+        if(txtSetNome != '' && txtSetEmail != '' && txtSetSenha != '') {
+            cadastrarUsuario();
+        } else {
+            msgAlerta('erro', 'Preencha todos os dados...');
+        }
+    }
+});
 
 const verificaCadastro = () => {
     const getEmail = txtGetEmail.value;
@@ -102,7 +111,7 @@ const verificaCadastro = () => {
         let email = dados.email;
         let senha = dados.senha;
 
-        if (getEmail == '' || getSenha == '') {
+        if (getEmail === '' || getSenha === '') {
             msgAlerta('erro', 'Preencha todos os dados...');
         } else {
             
@@ -110,6 +119,10 @@ const verificaCadastro = () => {
                 limpaInput()
                 confirmacao = false;
                 msgAlerta('confirmacao', 'Login confirmado com sucesso...');
+
+                setTimeout(() => {
+                    window.location.href = './painel.html';
+                }, 1000);
             } else {
                 msgAlerta('erro', 'Usuário invalido...');
             }
@@ -118,3 +131,15 @@ const verificaCadastro = () => {
     });
 };
 btnEntrar.addEventListener('click', verificaCadastro)
+txtGetSenha.addEventListener('keydown', ( {key} ) => {
+    const getEmail = txtGetEmail.value;
+    const getSenha = txtGetSenha.value;
+
+    if(key === 'Enter') {
+        if(getEmail != '' && getSenha != '') {
+            verificaCadastro();
+        } else {
+            msgAlerta('erro', 'Preencha todos os dados...');
+        }
+    }
+});
