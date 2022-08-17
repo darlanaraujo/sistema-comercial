@@ -33,6 +33,7 @@
                     <li><span class="menu"><i class="fa-solid fa-boxes-stacked"></i><span class="texto">Cad. Produtos</span></span></li>
                     <li><span class="menu"><i class="fa-solid fa-address-book"></i><span class="texto">Cad. Fornecedores</span></span></li>
                     <li><span class="menu"><i class="fa-solid fa-print"></i><span class="texto">Relatórios</span></span></li>
+                    <li><span class="menu"><i class="fa-solid fa-address-card"></i><span class="texto">Meus Dados</span></span></li>
                     <li><span class="menu"><i class="fa-solid fa-gear"></i><span class="texto">Configurações</span></span></li>
                 </ul>
                 <ul class="lista-menu">
@@ -43,13 +44,14 @@
 
         <section class="coluna-conteudo">
             <header class="topo-conteudo">
-                <div>
+                <div class="wrapper-menu-bar">
                     <button class="btn-menu-bar" id="btnMenuBar"><i class="fa-solid fa-bars"></i></button>
                     <h1 class="titulo-pagina">Titulo</h1>
                 </div>
 
                 <div class="wrapper-user">
-                    <span class="texto">Olá, <span class="usuario">Nome</span> </span>
+                    <span class="texto">Olá, <span class="usuario" id="txtNomeUsuario">Nome</span></span>
+                    <img src="img/avatar.JPG" class="img-avatar">
                 </div>
             </header>
 
@@ -57,27 +59,14 @@
                 <section class="container container-conteudo">
                     <!-- TODAS AS JANELAS DO MENU SE ABREM AQUI -->
 
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repellat autem distinctio maxime eius repellendus doloribus aliquid culpa aut obcaecati rerum accusamus libero, fuga fugit soluta quibusdam. Expedita, maxime consequatur.</div><br><br>
-
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repellat autem distinctio maxime eius repellendus doloribus aliquid culpa aut obcaecati rerum accusamus libero, fuga fugit soluta quibusdam. Expedita, maxime consequatur.</div><br><br>
-
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repellat autem distinctio maxime eius repellendus doloribus aliquid culpa aut obcaecati rerum accusamus libero, fuga fugit soluta quibusdam. Expedita, maxime consequatur.</div><br><br>
-
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repellat autem distinctio maxime eius repellendus doloribus aliquid culpa aut obcaecati rerum accusamus libero, fuga fugit soluta quibusdam. Expedita, maxime consequatur.</div><br><br>
-
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repellat autem distinctio maxime eius repellendus doloribus aliquid culpa aut obcaecati rerum accusamus libero, fuga fugit soluta quibusdam. Expedita, maxime consequatur.</div><br><br>
-
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repellat autem distinctio maxime eius repellendus doloribus aliquid culpa aut obcaecati rerum accusamus libero, fuga fugit soluta quibusdam. Expedita, maxime consequatur.</div><br><br>
-
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repellat autem distinctio maxime eius repellendus doloribus aliquid culpa aut obcaecati rerum accusamus libero, fuga fugit soluta quibusdam. Expedita, maxime consequatur.</div><br><br>
-
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repellat autem distinctio maxime eius repellendus doloribus aliquid culpa aut obcaecati rerum accusamus libero, fuga fugit soluta quibusdam. Expedita, maxime consequatur.</div><br><br>
-
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repellat autem distinctio maxime eius repellendus doloribus aliquid culpa aut obcaecati rerum accusamus libero, fuga fugit soluta quibusdam. Expedita, maxime consequatur.</div><br><br>
-
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repellat autem distinctio maxime eius repellendus doloribus aliquid culpa aut obcaecati rerum accusamus libero, fuga fugit soluta quibusdam. Expedita, maxime consequatur.</div><br><br>
-
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo repellat autem distinctio maxime eius repellendus doloribus aliquid culpa aut obcaecati rerum accusamus libero, fuga fugit soluta quibusdam. Expedita, maxime consequatur.</div><br><br>
+                    <div class="pagina dashboard active" id="dashboard">Dashboard</div>
+                    <div class="pagina cad-clientes" id="cadClientes">cad-clientes</div>
+                    <div class="pagina cad-categorias" id="cadCategorias">cad-categorias</div>
+                    <div class="pagina cad-produtos" id="cadProdutos">cad-produtos</div>
+                    <div class="pagina cad-fornecedores" id="cadFornecedores">cad-fornecedores</div>
+                    <div class="pagina relatorios" id="relatorios">relatorios</div>
+                    <div class="pagina meus-dados" id="meusDados">meus-dados</div>
+                    <div class="pagina configuracoes" id="configuracoes">configuracoes</div>
 
 
                 </section>
