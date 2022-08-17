@@ -122,7 +122,7 @@ const verificaCadastro = () => {
 
                 setTimeout(() => {
                     window.location.href = './painel.html';
-                }, 1000);
+                }, 2000);
             } else {
                 msgAlerta('erro', 'Usuário invalido...');
             }
