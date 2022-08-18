@@ -53,7 +53,12 @@ btnMenus.forEach((menu, index) => {
 
         // Ativa a página selecionada e o titulo
         paginas[index].classList.add('active');
-        txtTitulo.innerHTML = titulos[index];
+
+        txtTitulo.classList.remove('active')
+        setTimeout(() => {
+            txtTitulo.classList.add('active')
+            txtTitulo.innerHTML = titulos[index];
+        }, 1000);
     });
 });
 
@@ -63,7 +68,7 @@ const btnSair = document.querySelector('#btnSair');
 const logout = () => {
     msgAlerta('confirmacao', 'Saindo do sistema...')
 
-    setTimeout(() =>{
+    setTimeout(() => {
         window.location.href = 'index.html';
     }, 2000);
 };

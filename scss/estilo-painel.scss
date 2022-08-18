@@ -153,6 +153,11 @@ body {
                     color: $corSecundariaDark;
                     font-size: 18px;
                     font-weight: 700;
+                    animation: fade-left 1s forwards reverse;
+                    
+                    &.active {
+                        animation: fade-left 1s forwards;
+                    } 
                 }
             }
 

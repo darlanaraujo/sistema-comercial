@@ -53,6 +53,17 @@
   }
 }
 
+@keyframes fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 .container-alerta .modal-alerta {
   position: absolute;
   right: 0;
@@ -261,6 +272,11 @@ body {
   color: #636363;
   font-size: 18px;
   font-weight: 700;
+  animation: fade-left 1s forwards reverse;
+}
+
+.main .coluna-conteudo .topo-conteudo .wrapper-menu-bar .titulo-pagina.active {
+  animation: fade-left 1s forwards;
 }
 
 .main .coluna-conteudo .topo-conteudo .wrapper-user {
