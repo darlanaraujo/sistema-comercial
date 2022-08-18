@@ -27,12 +27,106 @@
   }
 }
 
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    z-index: -1;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+    transform: translateY(200px);
+  }
+}
+
+.container-alerta .modal-alerta {
+  position: absolute;
+  right: 0;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px 0 0 10px;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  align-items: center;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: 1s;
+  animation: alerta-out 1s forwards;
+  z-index: 100;
+}
+
+.container-alerta .modal-alerta.bottom {
+  bottom: 20px !important;
+}
+
+.container-alerta .modal-alerta.top {
+  top: 20px;
+}
+
+.container-alerta .modal-alerta.active {
+  transition: 1s;
+  animation: alerta-enter 1s forwards;
+}
+
+.container-alerta .modal-alerta > div {
+  padding: 15px;
+}
+
+.container-alerta .modal-alerta.alerta-erro .logo {
+  background-color: #c40000 !important;
+}
+
+.container-alerta .modal-alerta.alerta-erro .titulo {
+  color: #c40000 !important;
+}
+
+.container-alerta .modal-alerta .logo {
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  background-color: #0096c4;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-alerta .modal-alerta .titulo {
+  text-transform: uppercase;
+  color: #0096c4;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.container-alerta .modal-alerta .texto {
+  font-size: 14px;
+}
+
+body {
+  overflow: hidden;
+}
+
 .main {
   width: 100%;
   height: 100vh;
   display: grid;
   grid-template-columns: auto 1fr;
-  background-color: #f0f0f0;
+  background-color: white;
 }
 
 .main .coluna-menu {
@@ -95,13 +189,13 @@
   cursor: pointer;
 }
 
-.main .coluna-menu .menu-principal .menu:hover {
-  background-color: #f0f0f0;
+.main .coluna-menu .menu-principal .menu:hover, .main .coluna-menu .menu-principal .menu.active {
+  background-color: white;
   border-radius: 20px 0 0 20px;
   color: #0096c4;
 }
 
-.main .coluna-menu .menu-principal .menu:hover::before {
+.main .coluna-menu .menu-principal .menu:hover::before, .main .coluna-menu .menu-principal .menu.active::before {
   content: '';
   position: absolute;
   top: -30px;
@@ -110,11 +204,11 @@
   height: 30px;
   background: transparent;
   border-radius: 30%;
-  box-shadow: 22px 22px 0px 10px #f0f0f0;
+  box-shadow: 22px 22px 0px 10px white;
   pointer-events: none;
 }
 
-.main .coluna-menu .menu-principal .menu:hover::after {
+.main .coluna-menu .menu-principal .menu:hover::after, .main .coluna-menu .menu-principal .menu.active::after {
   content: '';
   position: absolute;
   bottom: -30px;
@@ -123,38 +217,7 @@
   height: 30px;
   background: transparent;
   border-radius: 30%;
-  box-shadow: 22px -22px 0px 10px #f0f0f0;
-}
-
-.main .coluna-menu .menu-principal .menu.active {
-  background-color: #f0f0f0;
-  border-radius: 20px 0 0 20px;
-  color: #0096c4;
-}
-
-.main .coluna-menu .menu-principal .menu.active::before {
-  content: '';
-  position: absolute;
-  top: -30px;
-  right: 0;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  border-radius: 30%;
-  box-shadow: 25px 25px 0px 10px #f0f0f0;
-  pointer-events: none;
-}
-
-.main .coluna-menu .menu-principal .menu.active::after {
-  content: '';
-  position: absolute;
-  bottom: -30px;
-  right: 0;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  border-radius: 30%;
-  box-shadow: 22px -22px 0px 10px #f0f0f0;
+  box-shadow: 22px -22px 0px 10px white;
 }
 
 .main .coluna-menu .menu-principal .menu i {
@@ -173,6 +236,8 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0.5px 3px 1px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 100;
 }
 
 .main .coluna-conteudo .topo-conteudo .wrapper-menu-bar {
@@ -231,18 +296,25 @@
 .main .coluna-conteudo .conteudo .container-conteudo {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
   overflow-y: scroll;
   padding: 20px 10px;
 }
 
 .main .coluna-conteudo .conteudo .container-conteudo .pagina {
   position: absolute;
-  width: 100%;
-  display: none;
-  border: solid 1px red;
+  width: 95%;
+  height: 130%;
+  padding: 20px;
+  border-radius: 5px;
+  background: #f0f0f0;
+  animation: fade-down 1s forwards;
 }
 
 .main .coluna-conteudo .conteudo .container-conteudo .pagina.active {
+  opacity: 1;
+  animation: fade-up 1s forwards;
   display: block;
 }
 

@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/estilo-painel.css">
 
     <!-- Script -->
+    <script src="js/usuario.js" defer></script>
+    <script src="js/login.js" defer></script>
     <script src="js/painel.js" defer></script>
 
     <title>#Sistema Comercial - Painel</title>
@@ -27,17 +29,26 @@
             </div>
             <nav class="menu-principal">
                 <ul class="lista-menu">
-                    <li><span class="menu active"><i class="fa-brands fa-trello"></i><span class="texto">Dashboard</span></span></li>
-                    <li><span class="menu"><i class="fa-solid fa-address-card"></i><span class="texto">Cad. Clientes</span></span></li>
-                    <li><span class="menu"><i class="fa-solid fa-clipboard-list"></i><span class="texto">Cad. Categorias</span></span></li>
-                    <li><span class="menu"><i class="fa-solid fa-boxes-stacked"></i><span class="texto">Cad. Produtos</span></span></li>
-                    <li><span class="menu"><i class="fa-solid fa-address-book"></i><span class="texto">Cad. Fornecedores</span></span></li>
-                    <li><span class="menu"><i class="fa-solid fa-print"></i><span class="texto">Relatórios</span></span></li>
-                    <li><span class="menu"><i class="fa-solid fa-address-card"></i><span class="texto">Meus Dados</span></span></li>
-                    <li><span class="menu"><i class="fa-solid fa-gear"></i><span class="texto">Configurações</span></span></li>
+                    <li><span class="menu active" id="btnMenu"><i class="fa-brands fa-trello"></i><span
+                                class="texto">Dashboard</span></span></li>
+                    <li><span class="menu" id="btnMenu"><i class="fa-solid fa-address-card"></i><span class="texto">Cad.
+                                Clientes</span></span></li>
+                    <li><span class="menu" id="btnMenu"><i class="fa-solid fa-clipboard-list"></i><span
+                                class="texto">Cad. Categorias</span></span></li>
+                    <li><span class="menu" id="btnMenu"><i class="fa-solid fa-boxes-stacked"></i><span
+                                class="texto">Cad. Produtos</span></span></li>
+                    <li><span class="menu" id="btnMenu"><i class="fa-solid fa-address-book"></i><span class="texto">Cad.
+                                Fornecedores</span></span></li>
+                    <li><span class="menu" id="btnMenu"><i class="fa-solid fa-print"></i><span
+                                class="texto">Relatórios</span></span></li>
+                    <li><span class="menu" id="btnMenu"><i class="fa-solid fa-address-card"></i><span class="texto">Meus
+                                Dados</span></span></li>
+                    <li><span class="menu" id="btnMenu"><i class="fa-solid fa-gear"></i><span
+                                class="texto">Configurações</span></span></li>
                 </ul>
                 <ul class="lista-menu">
-                    <li><span class="menu"><i class="fa-solid fa-right-from-bracket"></i><span class="texto">Sair</span></span></li>
+                    <li><span class="menu"><i class="fa-solid fa-right-from-bracket"></i><span class="texto"
+                                id="btnSair">Sair</span></span></li>
                 </ul>
             </nav>
         </section>
@@ -46,7 +57,7 @@
             <header class="topo-conteudo">
                 <div class="wrapper-menu-bar">
                     <button class="btn-menu-bar" id="btnMenuBar"><i class="fa-solid fa-bars"></i></button>
-                    <h1 class="titulo-pagina">Titulo</h1>
+                    <h1 class="titulo-pagina" id="txtTitulo">Dashboard</h1>
                 </div>
 
                 <div class="wrapper-user">
@@ -59,28 +70,51 @@
                 <section class="container container-conteudo">
                     <!-- TODAS AS JANELAS DO MENU SE ABREM AQUI -->
 
-                    <div class="pagina dashboard active" id="dashboard">Dashboard</div>
-                    <div class="pagina cad-clientes" id="cadClientes">cad-clientes</div>
-                    <div class="pagina cad-categorias" id="cadCategorias">cad-categorias</div>
-                    <div class="pagina cad-produtos" id="cadProdutos">cad-produtos</div>
-                    <div class="pagina cad-fornecedores" id="cadFornecedores">cad-fornecedores</div>
-                    <div class="pagina relatorios" id="relatorios">relatorios</div>
-                    <div class="pagina meus-dados" id="meusDados">meus-dados</div>
-                    <div class="pagina configuracoes" id="configuracoes">configuracoes</div>
+                    <div class="pagina dashboard active" id="pagina">Dashboard</div>
+                    <div class="pagina cad-clientes" id="pagina">cad-clientes</div>
+                    <div class="pagina cad-categorias" id="pagina">cad-categorias</div>
+                    <div class="pagina cad-produtos" id="pagina">cad-produtos</div>
+                    <div class="pagina cad-fornecedores" id="pagina">cad-fornecedores</div>
+                    <div class="pagina relatorios" id="pagina">relatorios</div>
+                    <div class="pagina meus-dados" id="pagina">
+                        <p>Seu nome: <span id="txNomeUsuario"></span></p>
+                        <p>Seu email: <span id="txEmailUsuario"></span></p>
+                        <p>Sua senha: <span id="txSenhaUsuario"></span></p>
+                    </div>
+                    <div class="pagina configuracoes" id="pagina">configuracoes</div>
 
 
                 </section>
-                
+
                 <section class="container-painel">
                     PAINEL DE CONTROLE
                 </section>
             </section>
 
             <footer class="rodape">
-                <p class="creditos">Desenvolvido por <a href="https://github.com/darlanaraujo" target="_blank">Darlan Araujo</a> © Sistema de cadastro 2022</p>
+                <p class="creditos">Desenvolvido por <a href="https://github.com/darlanaraujo" target="_blank">Darlan
+                        Araujo</a> © Sistema de cadastro 2022</p>
             </footer>
         </section>
     </main>
+
+    <section class="container-alerta">
+        <div class="modal-alerta alerta-erro bottom" id="alertaErro">
+            <span class="logo"><i class="fa-brands fa-shopify"></i></span>
+            <div>
+                <h2 class="titulo">Atenção!</h2>
+                <p class="texto" id="txtErro">Preencha todos os dados...</p>
+            </div>
+        </div>
+
+        <div class="modal-alerta alerta-confirmacao bottom" id="alertaConfirmacao">
+            <span class="logo"><i class="fa-brands fa-shopify"></i></span>
+            <div>
+                <h2 class="titulo">Confirmação!</h2>
+                <p class="texto" id="txtConfirmacao">Cadastro feito com sucesso...</p>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

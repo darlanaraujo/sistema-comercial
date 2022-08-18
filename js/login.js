@@ -9,13 +9,13 @@ function initMoveOverlay() {
     };
     btnOverCadastrar.addEventListener('click', moveOverlay);
 
-
     btnOverEntrar.addEventListener('click', moveOverlay);
 }
-initMoveOverlay();
+// initMoveOverlay();
 
 // ==========================================================================
 
+// BANCO DE DADOS DE TODOS OS CADASTRADOS NO LOGIN;
 
 const setBancoLogin = (dados) => {
     localStorage.setItem('bd-login', JSON.stringify(dados));
@@ -108,6 +108,7 @@ const verificaCadastro = () => {
     const getSenha = txtGetSenha.value;
     
     dadosLogin.forEach((dados) => {
+        let nome = dados.nome;
         let email = dados.email;
         let senha = dados.senha;
 
@@ -116,10 +117,20 @@ const verificaCadastro = () => {
         } else {
             
             if(getEmail === email && getSenha === senha) {
+                // Guarda os dados do usuário para proxima tela;
+                setUsuario(nome, email, senha);
+                
+                // nomeUsuario = dados.nome;
+                // emailUsuario = dados.email;
+                // senhaUsuario = dados.senha;
+                
+                // console.log(dados.nome);
+                // console.log(nomeUsuario);
+                
                 limpaInput()
                 confirmacao = false;
                 msgAlerta('confirmacao', 'Login confirmado com sucesso...');
-
+                
                 setTimeout(() => {
                     window.location.href = './painel.html';
                 }, 2000);

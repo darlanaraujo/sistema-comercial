@@ -1,13 +1,18 @@
 @import 'reset';
 @import 'cores';
 @import 'animacoes';
+@import 'alertas';
+
+body {
+    overflow: hidden;
+}
 
 .main {
     width: 100%;
     height: 100vh;
     display: grid;
     grid-template-columns: auto 1fr;
-    background-color: $corSecundaria;
+    background-color: white;
 
     .coluna-menu {
         padding: 20px 0px 20px 10px;
@@ -16,6 +21,7 @@
         background-color: $corPrimaria;
         overflow: hidden;
         transition: .2s ease-in-out;
+
         &.minimize {
             width: 60px;
 
@@ -68,41 +74,11 @@
                 color: white;
                 // font-size: 15px;
                 cursor: pointer;
-                
 
-                &:hover {
-                    background-color: $corSecundaria;
-                    border-radius: 20px 0 0 20px;
-                    color: $corPrimaria;
 
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: -30px;
-                        right: 0;
-                        width: 30px;
-                        height: 30px;
-                        background: transparent;
-                        border-radius: 30%;
-                        box-shadow: 22px 22px 0px 10px $corSecundaria;
-                        pointer-events: none;
-                    }
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: -30px;
-                        right: 0;
-                        width: 30px;
-                        height: 30px;
-                        background: transparent;
-                        border-radius: 30%;
-                        box-shadow: 22px -22px 0px 10px $corSecundaria;
-                    }
-                }
-
+                &:hover,
                 &.active {
-                    background-color: $corSecundaria;
+                    background-color: white;
                     border-radius: 20px 0 0 20px;
                     color: $corPrimaria;
 
@@ -115,7 +91,7 @@
                         height: 30px;
                         background: transparent;
                         border-radius: 30%;
-                        box-shadow: 25px 25px 0px 10px $corSecundaria;
+                        box-shadow: 22px 22px 0px 10px white;
                         pointer-events: none;
                     }
 
@@ -128,7 +104,7 @@
                         height: 30px;
                         background: transparent;
                         border-radius: 30%;
-                        box-shadow: 22px -22px 0px 10px $corSecundaria;
+                        box-shadow: 22px -22px 0px 10px white;
                     }
                 }
 
@@ -154,23 +130,25 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: .5px 3px 1px rgba(0, 0, 0, .3);
+            position: relative;
+            z-index: 100;
 
             .wrapper-menu-bar {
                 display: flex;
                 gap: 20px;
-                
+
                 .btn-menu-bar {
                     background: none;
                     border: none;
                     font-size: 18px;
                     color: $corSecundariaDark;
                     cursor: pointer;
-    
+
                     &:hover {
                         color: $corPrimaria;
                     }
                 }
-    
+
                 .titulo-pagina {
                     color: $corSecundariaDark;
                     font-size: 18px;
@@ -208,23 +186,33 @@
             grid-template-columns: 1fr 300px;
             height: calc(100vh - 110px);
 
+
             .container-conteudo {
                 position: relative;
                 width: 100%;
+                display: flex;
+                justify-content: center;
                 overflow-y: scroll;
                 padding: 20px 10px;
-                
+
                 .pagina {
                     position: absolute;
-                    width: 100%;
-                    // height: 100%;
-                    display: none;
-                    border: solid 1px red;
+                    width: 95%;
+                    height: 130%;
+                    padding: 20px;
+                    border-radius: 5px;
+                    background: rgb(240, 240, 240);
+                    animation: fade-down 1s forwards;
+                    // z-index: -1;
+                    // display: none;
+                    // border: solid 1px red;
 
                     &.active {
+                        opacity: 1;
+                        animation: fade-up 1s forwards;
                         display: block;
                     }
-                    
+
                 }
 
             }
