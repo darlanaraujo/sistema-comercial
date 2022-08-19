@@ -131,11 +131,94 @@
   font-size: 14px;
 }
 
+.clientes {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.clientes .wrapper-btn {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+.clientes .wrapper-btn .btn-cadastrar {
+  background-color: #0096c4;
+  border: solid 2px #0096c4;
+  padding: 15px;
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.clientes .wrapper-btn .btn-cadastrar:hover {
+  background-color: white;
+  color: #0096c4;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.clientes .tabela {
+  width: 100%;
+  min-width: 700px;
+  margin-top: 20px;
+  overflow-x: scroll;
+}
+
+.clientes .tabela .cabecalho {
+  background-color: #0096c4;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.clientes .tabela .cabecalho > td {
+  padding: 10px;
+}
+
+.clientes .tabela .dados {
+  font-size: 14px;
+  color: #282828;
+  background-color: #f0f0f0;
+}
+
+.clientes .tabela .dados > td {
+  padding: 5px;
+}
+
+.clientes .tabela .dados .acoes {
+  display: flex;
+  gap: 5px;
+}
+
+.clientes .tabela .dados .acoes .btn-acoes {
+  background-color: #0096c4;
+  color: white;
+  padding: 8px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.clientes .tabela .dados .acoes .btn-acoes:hover {
+  opacity: .5;
+}
+
+.clientes .tabela .dados .acoes .btn-acoes.btn-excluir {
+  background-color: #c40000;
+}
+
 body {
   overflow: hidden;
 }
 
 .main {
+  display: none;
+}
+
+.main.active {
+  display: block;
   width: 100%;
   height: 100vh;
   display: grid;
@@ -336,11 +419,10 @@ body {
 .main .coluna-conteudo .conteudo .container-conteudo .pagina {
   position: absolute;
   width: 95%;
-  height: 130%;
   padding: 20px;
   border-radius: 5px;
-  background: #f0f0f0;
   animation: fade-down 1s forwards;
+  border: solid 1px red;
 }
 
 .main .coluna-conteudo .conteudo .container-conteudo .pagina.active {

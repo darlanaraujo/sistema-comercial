@@ -1,3 +1,6 @@
+import { msgAlerta } from './modulos.js';
+import { setUsuario } from './usuario.js';
+
 // Função que faz o efeito na tela de login;
 function initMoveOverlay() {
     const btnOverCadastrar = document.querySelector('#btnOverCadastrar');
@@ -26,7 +29,7 @@ const getBancoLogin = () => {
 }
 
 const setLogin = (nome, email, senha) => {
-    dadosLogin.unshift({nome: nome, email: email, senha: senha});
+    dadosLogin.unshift({ nome: nome, email: email, senha: senha });
 
     setBancoLogin(dadosLogin);
 };
@@ -61,41 +64,25 @@ const limpaInput = () => {
     txtGetSenha.value = '';
 };
 
-const msgAlerta = (tipoAlerta, msg) => {
-    if(tipoAlerta === 'erro') {
-        txtErro.innerHTML = msg;
-        alertaErro.classList.add('active');
-        setTimeout(() => {
-            alertaErro.classList.remove('active');
-        }, 2500);
-    } else if(tipoAlerta === 'confirmacao') {
-        txtConfirmacao.innerHTML = msg;
-        alertaConfirmacao.classList.add('active');
-        setTimeout(() => {
-            alertaConfirmacao.classList.remove('active');
-        }, 2500);
-    }
-};
-
 const cadastrarUsuario = () => {
     const nome = txtSetNome.value;
     const email = txtSetEmail.value;
     const senha = txtSetSenha.value;
 
-    if(nome === '' || email === '' || senha === '') {
+    if (nome === '' || email === '' || senha === '') {
         msgAlerta('erro', 'Preencha todos os dados...');
     } else {
         limpaInput();
         msgAlerta('confirmacao', 'Cadastro feito com sucesso...');
-    
+
         setLogin(nome, email, senha);
     }
 
 };
 btnCadastrar.addEventListener('click', cadastrarUsuario);
-txtSetSenha.addEventListener('keydown', ({key}) => {
-    if(key === 'Enter') {
-        if(txtSetNome != '' && txtSetEmail != '' && txtSetSenha != '') {
+txtSetSenha.addEventListener('keydown', ({ key }) => {
+    if (key === 'Enter') {
+        if (txtSetNome != '' && txtSetEmail != '' && txtSetSenha != '') {
             cadastrarUsuario();
         } else {
             msgAlerta('erro', 'Preencha todos os dados...');
@@ -106,41 +93,48 @@ txtSetSenha.addEventListener('keydown', ({key}) => {
 const verificaCadastro = () => {
     const getEmail = txtGetEmail.value;
     const getSenha = txtGetSenha.value;
-    
-    dadosLogin.forEach((dados) => {
-        let nome = dados.nome;
-        let email = dados.email;
-        let senha = dados.senha;
 
-        if (getEmail === '' || getSenha === '') {
-            msgAlerta('erro', 'Preencha todos os dados...');
+    if (getEmail === '' || getSenha === '') {
+        msgAlerta('erro', 'Preencha todos os dados...');
+    } else {
+
+        if (dadosLogin.length > 0) {
+
+            dadosLogin.forEach((dados) => {
+                let nome = dados.nome;
+                let email = dados.email;
+                let senha = dados.senha;
+
+                if (getEmail === email && getSenha === senha) {
+                    // Guarda os dados do usuário para proxima tela;
+                    setUsuario(nome, email, senha);
+
+                    limpaInput()
+
+                    msgAlerta('confirmacao', 'Login confirmado com sucesso...');
+
+                    setTimeout(() => {
+                        window.location.href = './painel.html';
+                    }, 2000);
+                } else {
+                    msgAlerta('erro', 'Usuário invalido...');
+                }
+            });
         } else {
-            if(getEmail === email && getSenha === senha) {
-                // Guarda os dados do usuário para proxima tela;
-                setUsuario(nome, email, senha);
-                
-                limpaInput()
-                confirmacao = false;
-                msgAlerta('confirmacao', 'Login confirmado com sucesso...');
-                
-                setTimeout(() => {
-                    window.location.href = './painel.html';
-                }, 2000);
-            } else {
-                msgAlerta('erro', 'Usuário invalido...');
-            }
+            msgAlerta('erro', 'Usuário não cadastrado...');
         }
 
-    });
+    }
+
 };
 btnEntrar.addEventListener('click', verificaCadastro)
 
-txtGetSenha.addEventListener('keydown', ( {key} ) => {
+txtGetSenha.addEventListener('keydown', ({ key }) => {
     const getEmail = txtGetEmail.value;
     const getSenha = txtGetSenha.value;
 
-    if(key === 'Enter') {
-        if(getEmail != '' && getSenha != '') {
+    if (key === 'Enter') {
+        if (getEmail != '' && getSenha != '') {
             verificaCadastro();
         } else {
             msgAlerta('erro', 'Preencha todos os dados...');

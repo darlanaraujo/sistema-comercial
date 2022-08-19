@@ -1,0 +1,77 @@
+.clientes {
+    width: 100%;
+    overflow-x: scroll;
+
+    .wrapper-btn {
+        width: 100%;
+        display: flex;
+        justify-content: left;
+
+        .btn-cadastrar {
+            background-color: $corPrimaria;
+            border: solid 2px $corPrimaria;
+            padding: 15px;
+            color: white;
+            border-radius: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &:hover {
+                background-color: white;
+                color: $corPrimaria;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
+            }
+        }
+    }
+
+    .tabela {
+        width: 100%;
+        min-width: 700px;
+        margin-top: 20px;
+        overflow-x: scroll;
+
+        .cabecalho {
+            background-color: $corPrimaria;
+            text-align: center;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+
+            >td {
+                padding: 10px;
+            }
+        }
+
+        .dados {
+            font-size: 14px;
+            color: $corTexto;
+            background-color: $corSecundaria;
+
+            >td {
+                padding: 5px;
+            }
+
+            .acoes {
+                display: flex;
+                gap: 5px;
+
+                .btn-acoes {
+                    background-color: $corPrimaria;
+                    color: white;
+                    padding: 8px 5px;
+                    border-radius: 3px;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: .5;
+                    }
+
+                    &.btn-excluir {
+                        background-color: $corErro;
+                    }
+                }
+            }
+        }
+    }
+}

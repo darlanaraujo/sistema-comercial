@@ -1,7 +1,25 @@
+import { msgAlerta } from './modulos.js';
+import { setUsuario } from './usuario.js';
+import { dadosUsuario } from './usuario.js';
+
 // ==================== DADOS DO USUÁRIO ====================
 const nomeUsuario = dadosUsuario.nome;
 const emailUsuario = dadosUsuario.email;
 const senhaUsuario = dadosUsuario.senha;
+
+// ==================== VALIDA ACESSO ====================
+
+const validaAcesso = () => {
+    const main = document.querySelector('#main');
+
+    if (nomeUsuario === undefined || nomeUsuario === '') {
+        main.classList.remove('active');
+        window.location.href = 'index.html';
+    } else {
+        main.classList.add('active');
+    }
+};
+validaAcesso();
 
 // ==================== PAINEL CABEÇÃLHO ====================
 const txtNomeUsuario = document.querySelector('#txtNomeUsuario');
@@ -21,10 +39,10 @@ btnMenuBar.addEventListener('click', minimizeMenu);
 const txtTitulo = document.querySelector('#txtTitulo');
 const titulos = {
     0: 'Dashboard',
-    1: 'Cadastro de Clientes',
-    2: 'Cadastro de Categorias',
-    3: 'Cadastro de Produtos',
-    4: 'Cadastro de Fornecedores',
+    1: 'Clientes',
+    2: 'Categorias',
+    3: 'Produtos',
+    4: 'Fornecedores',
     5: 'Relatórios',
     6: 'Meus Dados',
     7: 'Configurações'
@@ -69,6 +87,7 @@ const logout = () => {
     msgAlerta('confirmacao', 'Saindo do sistema...');
 
     setTimeout(() => {
+        setUsuario('', '', '');
         window.location.href = 'index.html';
     }, 2000);
 };

@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="css/estilo-painel.css">
 
     <!-- Script -->
-    <script src="js/usuario.js" defer></script>
-    <script src="js/painel.js" defer></script>
+    <script src="js/usuario.js" type="module" defer></script>
+    <script src="js/painel.js" type="module" defer></script>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/logo-icon.png" type="image/x-icon">
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <main class="main">
+    <main class="main" id="main">
         <section class="coluna-menu" id="colunaMenu">
             <div class="logo">
                 <img src="img/logo-icon.png" class="img-logo">
@@ -36,14 +36,14 @@
                 <ul class="lista-menu">
                     <li><span class="menu active" id="btnMenu"><i class="fa-brands fa-trello"></i><span
                                 class="texto">Dashboard</span></span></li>
-                    <li><span class="menu" id="btnMenu"><i class="fa-solid fa-address-card"></i><span class="texto">Cad.
-                                Clientes</span></span></li>
+                    <li><span class="menu" id="btnMenu"><i class="fa-solid fa-address-card"></i><span
+                                class="texto">Clientes</span></span></li>
                     <li><span class="menu" id="btnMenu"><i class="fa-solid fa-clipboard-list"></i><span
-                                class="texto">Cad. Categorias</span></span></li>
+                                class="texto">Categorias</span></span></li>
                     <li><span class="menu" id="btnMenu"><i class="fa-solid fa-boxes-stacked"></i><span
-                                class="texto">Cad. Produtos</span></span></li>
-                    <li><span class="menu" id="btnMenu"><i class="fa-solid fa-address-book"></i><span class="texto">Cad.
-                                Fornecedores</span></span></li>
+                                class="texto">Produtos</span></span></li>
+                    <li><span class="menu" id="btnMenu"><i class="fa-solid fa-address-book"></i><span
+                                class="texto">Fornecedores</span></span></li>
                     <li><span class="menu" id="btnMenu"><i class="fa-solid fa-print"></i><span
                                 class="texto">Relatórios</span></span></li>
                     <li><span class="menu" id="btnMenu"><i class="fa-solid fa-address-card"></i><span class="texto">Meus
@@ -74,25 +74,60 @@
             <section class="conteudo">
                 <section class="container container-conteudo">
                     <!-- TODAS AS JANELAS DO MENU SE ABREM AQUI -->
-
                     <div class="pagina dashboard active" id="pagina">Dashboard</div>
-                    <div class="pagina cad-clientes" id="pagina">cad-clientes</div>
-                    <div class="pagina cad-categorias" id="pagina">cad-categorias</div>
-                    <div class="pagina cad-produtos" id="pagina">cad-produtos</div>
-                    <div class="pagina cad-fornecedores" id="pagina">cad-fornecedores</div>
+
+                    <div class="pagina clientes" id="pagina">
+                        <div class="wrapper-btn">
+                            <button class="btn-cadastrar">Cadastrar Cliente</button>
+                        </div>
+                        <table class="tabela">
+                            <tr class="cabecalho">
+                                <td>Nome</td>
+                                <td>Celular</td>
+                                <td>Email</td>
+                                <td>cidade</td>
+                                <td>Ação</td>
+                            </tr>
+                            <tr class="dados">
+                                <td>Darlan Araujo</td>
+                                <td>(62) 98419-9593</td>
+                                <td>darlan@gmail.com</td>
+                                <td>Ap. de Goiânia</td>
+                                <td class="acoes">
+                                    <buttom class="btn-acoes btn-editar">Editar</buttom>
+                                    <buttom class="btn-acoes btn-excluir">Excluir</buttom>
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    </div>
+
+                    <div class="pagina categorias" id="pagina">cad-categorias</div>
+
+                    <div class="pagina produtos" id="pagina">cad-produtos</div>
+
+                    <div class="pagina fornecedores" id="pagina">cad-fornecedores</div>
+
                     <div class="pagina relatorios" id="pagina">relatorios</div>
+
                     <div class="pagina meus-dados" id="pagina">
                         <p>Seu nome: <span id="txNomeUsuario"></span></p>
                         <p>Seu email: <span id="txEmailUsuario"></span></p>
                         <p>Sua senha: <span id="txSenhaUsuario"></span></p>
                     </div>
+
                     <div class="pagina configuracoes" id="pagina">configuracoes</div>
 
 
                 </section>
 
                 <section class="container-painel">
-                    PAINEL DE CONTROLE
+                    <div class="wrapper-menu-bar">
+                        <button class="btn-menu-bar"><i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+                        <span class="titulo">PAINEL DE CONTROLE</span>
+                    </div>
+                    
                 </section>
             </section>
 

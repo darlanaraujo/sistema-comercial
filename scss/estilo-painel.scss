@@ -1,18 +1,29 @@
+// Padrões
 @import 'reset';
 @import 'cores';
 @import 'animacoes';
+
+// Alertas
 @import 'alertas';
+
+// Páginas
+@import 'clientes';
 
 body {
     overflow: hidden;
 }
 
 .main {
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    background-color: white;
+    display: none;
+
+    &.active {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        background-color: white;
+    }
 
     .coluna-menu {
         padding: 20px 0px 20px 10px;
@@ -49,8 +60,8 @@ body {
             .texto-logo {
                 display: flex;
                 flex-direction: column;
-            
-           
+
+
                 .titulo {
                     color: white;
                     font-size: 25px;
@@ -59,7 +70,7 @@ body {
                     letter-spacing: 10px;
                     font-style: italic;
                 }
-    
+
                 .subtitulo {
                     font-size: 10px;
                     color: white;
@@ -168,10 +179,10 @@ body {
                     font-size: 18px;
                     font-weight: 700;
                     animation: fade-left 1s forwards reverse;
-                    
+
                     &.active {
                         animation: fade-left 1s forwards;
-                    } 
+                    }
                 }
             }
 
@@ -202,7 +213,7 @@ body {
 
         .conteudo {
             display: grid;
-            grid-template-columns: 1fr 300px;
+            grid-template-columns: 1fr auto;
             height: calc(100vh - 110px);
 
 
@@ -217,13 +228,10 @@ body {
                 .pagina {
                     position: absolute;
                     width: 95%;
-                    height: 130%;
+                    // height: 100%;
                     padding: 20px;
                     border-radius: 5px;
-                    background: rgb(240, 240, 240);
                     animation: fade-down 1s forwards;
-                    // z-index: -1;
-                    // display: none;
                     // border: solid 1px red;
 
                     &.active {
@@ -231,6 +239,8 @@ body {
                         animation: fade-up 1s forwards;
                         display: block;
                     }
+
+                    // Estilo Clientes - @import 'clientes';
 
                 }
 
@@ -241,6 +251,23 @@ body {
                 width: 100%;
                 height: 100%;
                 border: solid 1px red;
+
+                .wrapper-menu-bar {
+                    display: flex;
+                    gap: 20px;
+    
+                    .btn-menu-bar {
+                        background: none;
+                        border: none;
+                        font-size: 18px;
+                        color: $corSecundariaDark;
+                        cursor: pointer;
+    
+                        &:hover {
+                            color: $corPrimaria;
+                        }
+                    }
+                }
             }
         }
 
