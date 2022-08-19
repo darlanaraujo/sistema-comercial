@@ -18,7 +18,7 @@
     <script src="js/usuario.js" defer></script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo-icon.png" type="image/x-icon">
 
     <title>#Sistema Comercial - Login</title>
 </head>
@@ -63,14 +63,15 @@
 
             <div class="overlay-container">
                 <div class="overlay">
-                    <span class="logo"><i class="fa-brands fa-shopify"></i></span>
+                    <!-- <span class="logo"><i class="fa-brands fa-shopify"></i></span> -->
+                    <img src="img/logo-icon.png" class="img-logo">
                     <h1 class="titulo">Já tem uma conta?</h1>
                     <p class="texto">Faça o login com suas informações para ter acesso a nossa plataforma.</p>
                     <button class="btn-overlay" id="btnOverEntrar">Entrar</button>
                 </div>
 
                 <div class="overlay">
-                    <span class="logo"><i class="fa-brands fa-shopify"></i></span>
+                    <img src="img/logo-icon.png" class="img-logo">
                     <h1 class="titulo">Seja bem-vindo!</h1>
                     <p class="texto">Cadastre-se e comece a usar nossa plataforma on-line.</p>
                     <button class="btn-overlay" id="btnOverCadastrar">Cadastrar</button>
@@ -82,7 +83,9 @@
 
     <section class="container-alerta">
         <div class="modal-alerta alerta-erro top" id="alertaErro">
-            <span class="logo"><i class="fa-brands fa-shopify"></i></span>
+            <div class="logo">
+                <img src="img/logo-icon.png" class="img-logo">
+            </div>
             <div>
                 <h2 class="titulo">Atenção!</h2>
                 <p class="texto" id="txtErro">Preencha todos os dados...</p>
@@ -90,7 +93,10 @@
         </div>
 
         <div class="modal-alerta alerta-confirmacao top" id="alertaConfirmacao">
-            <span class="logo"><i class="fa-brands fa-shopify"></i></span>
+            <div class="logo">
+                <img src="img/logo-icon.png" class="img-logo">
+            </div>
+
             <div>
                 <h2 class="titulo">Confirmação!</h2>
                 <p class="texto" id="txtConfirmacao">Cadastro feito com sucesso...</p>

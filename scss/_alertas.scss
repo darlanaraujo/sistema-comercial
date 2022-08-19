@@ -51,13 +51,17 @@
         .logo {
             width: 100%;
             height: 100%;
-            font-size: 25px;
             background-color: $corPrimaria;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
+            
+            .img-logo {
+                width: 40px;
+            }
         }
+
 
         .titulo {
             text-transform: uppercase;

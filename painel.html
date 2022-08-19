@@ -14,8 +14,10 @@
 
     <!-- Script -->
     <script src="js/usuario.js" defer></script>
-    <!-- <script src="js/login.js" defer></script> -->
     <script src="js/painel.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/logo-icon.png" type="image/x-icon">
 
     <title>#Sistema Comercial - Painel</title>
 </head>
@@ -24,8 +26,11 @@
     <main class="main">
         <section class="coluna-menu" id="colunaMenu">
             <div class="logo">
-                <img src="img/logo.svg" class="img-logo">
-                <span class="titulo-logo">Sistema de Cad</span>
+                <img src="img/logo-icon.png" class="img-logo">
+                <div class="texto-logo">
+                    <span class="titulo">CAD</span>
+                    <span class="subtitulo">SISTEMA DE CADASTRO</span>
+                </div>
             </div>
             <nav class="menu-principal">
                 <ul class="lista-menu">
@@ -100,7 +105,9 @@
 
     <section class="container-alerta">
         <div class="modal-alerta alerta-erro bottom" id="alertaErro">
-            <span class="logo"><i class="fa-brands fa-shopify"></i></span>
+            <div class="logo">
+                <img src="img/logo-icon.png" class="img-logo">
+            </div>
             <div>
                 <h2 class="titulo">Atenção!</h2>
                 <p class="texto" id="txtErro">Preencha todos os dados...</p>
@@ -108,7 +115,9 @@
         </div>
 
         <div class="modal-alerta alerta-confirmacao bottom" id="alertaConfirmacao">
-            <span class="logo"><i class="fa-brands fa-shopify"></i></span>
+            <div class="logo">
+                <img src="img/logo-icon.png" class="img-logo">
+            </div>
             <div>
                 <h2 class="titulo">Confirmação!</h2>
                 <p class="texto" id="txtConfirmacao">Cadastro feito com sucesso...</p>

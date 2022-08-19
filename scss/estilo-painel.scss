@@ -28,7 +28,7 @@ body {
             .logo {
                 gap: 0;
 
-                .titulo-logo {
+                .texto-logo {
                     display: none;
                 }
             }
@@ -42,16 +42,30 @@ body {
             align-items: center;
 
             .img-logo {
-                width: 30px;
+                width: 45px;
                 color: white;
             }
 
-            .titulo-logo {
-                color: white;
-                font-size: 14px;
-                font-weight: 700;
-                text-transform: uppercase;
+            .texto-logo {
+                display: flex;
+                flex-direction: column;
+            
+           
+                .titulo {
+                    color: white;
+                    font-size: 25px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 10px;
+                    font-style: italic;
+                }
+    
+                .subtitulo {
+                    font-size: 10px;
+                    color: white;
+                }
             }
+
         }
 
         .menu-principal {

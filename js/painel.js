@@ -66,7 +66,7 @@ btnMenus.forEach((menu, index) => {
 const btnSair = document.querySelector('#btnSair');
 
 const logout = () => {
-    msgAlerta('confirmacao', 'Saindo do sistema...')
+    msgAlerta('confirmacao', 'Saindo do sistema...');
 
     setTimeout(() => {
         window.location.href = 'index.html';

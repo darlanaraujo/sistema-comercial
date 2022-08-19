@@ -58,6 +58,7 @@ body {
             .titulo {
                 font-size: 42px;
                 color: $corTexto;
+                text-shadow: 1px 1px 1px white;
             }
 
             .wrapper-midias {
@@ -167,6 +168,10 @@ body {
 
             .logo {
                 font-size: 60px;
+            }
+
+            .img-logo {
+                width: 70px;
             }
 
             .titulo {

@@ -108,12 +108,15 @@
 .container-alerta .modal-alerta .logo {
   width: 100%;
   height: 100%;
-  font-size: 25px;
   background-color: #0096c4;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container-alerta .modal-alerta .logo .img-logo {
+  width: 40px;
 }
 
 .container-alerta .modal-alerta .titulo {
@@ -182,6 +185,7 @@ body {
 .modal .form-container .form .titulo {
   font-size: 42px;
   color: #282828;
+  text-shadow: 1px 1px 1px white;
 }
 
 .modal .form-container .form .wrapper-midias {
@@ -290,6 +294,10 @@ body {
 
 .modal .overlay-container .overlay .logo {
   font-size: 60px;
+}
+
+.modal .overlay-container .overlay .img-logo {
+  width: 70px;
 }
 
 .modal .overlay-container .overlay .titulo {

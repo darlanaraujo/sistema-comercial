@@ -11,7 +11,7 @@ function initMoveOverlay() {
 
     btnOverEntrar.addEventListener('click', moveOverlay);
 }
-// initMoveOverlay();
+initMoveOverlay();
 
 // ==========================================================================
 
@@ -115,17 +115,9 @@ const verificaCadastro = () => {
         if (getEmail === '' || getSenha === '') {
             msgAlerta('erro', 'Preencha todos os dados...');
         } else {
-            
             if(getEmail === email && getSenha === senha) {
                 // Guarda os dados do usuário para proxima tela;
                 setUsuario(nome, email, senha);
-                
-                // nomeUsuario = dados.nome;
-                // emailUsuario = dados.email;
-                // senhaUsuario = dados.senha;
-                
-                // console.log(dados.nome);
-                // console.log(nomeUsuario);
                 
                 limpaInput()
                 confirmacao = false;
@@ -142,6 +134,7 @@ const verificaCadastro = () => {
     });
 };
 btnEntrar.addEventListener('click', verificaCadastro)
+
 txtGetSenha.addEventListener('keydown', ( {key} ) => {
     const getEmail = txtGetEmail.value;
     const getSenha = txtGetSenha.value;

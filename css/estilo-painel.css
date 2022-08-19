@@ -108,12 +108,15 @@
 .container-alerta .modal-alerta .logo {
   width: 100%;
   height: 100%;
-  font-size: 25px;
   background-color: #0096c4;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container-alerta .modal-alerta .logo .img-logo {
+  width: 40px;
 }
 
 .container-alerta .modal-alerta .titulo {
@@ -157,7 +160,7 @@ body {
   gap: 0;
 }
 
-.main .coluna-menu.minimize .logo .titulo-logo {
+.main .coluna-menu.minimize .logo .texto-logo {
   display: none;
 }
 
@@ -169,15 +172,27 @@ body {
 }
 
 .main .coluna-menu .logo .img-logo {
-  width: 30px;
+  width: 45px;
   color: white;
 }
 
-.main .coluna-menu .logo .titulo-logo {
+.main .coluna-menu .logo .texto-logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.main .coluna-menu .logo .texto-logo .titulo {
   color: white;
-  font-size: 14px;
+  font-size: 25px;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 10px;
+  font-style: italic;
+}
+
+.main .coluna-menu .logo .texto-logo .subtitulo {
+  font-size: 10px;
+  color: white;
 }
 
 .main .coluna-menu .menu-principal {
