@@ -9,7 +9,11 @@
 // Páginas
 @import 'clientes';
 
+// Modal
+@import 'modal';
+
 body {
+    position: relative;
     overflow: hidden;
 }
 
@@ -31,17 +35,17 @@ body {
         height: 100%;
         background-color: $corPrimaria;
         overflow: hidden;
-        transition: .2s ease-in-out;
+        transition: 1s;
+        animation: fade-in-menu 1s forwards;
+        // transition: .2s ease-in-out;
 
         &.minimize {
+            animation: fade-out-menu 1s forwards;
             width: 60px;
 
-            .logo {
-                gap: 0;
-
-                .texto-logo {
-                    display: none;
-                }
+            .menu {
+                padding: 15px !important;
+                gap: 10px;
             }
 
         }
@@ -49,7 +53,6 @@ body {
         .logo {
             display: flex;
             gap: 15px;
-            justify-content: center;
             align-items: center;
 
             .img-logo {
@@ -82,7 +85,7 @@ body {
         .menu-principal {
             margin-top: 20px;
             width: 100%;
-            height: calc(100vh - 80px);
+            height: calc(100vh - 100px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -198,6 +201,7 @@ body {
 
                     .usuario {
                         font-weight: 600;
+                        text-transform: capitalize;
                     }
                 }
 
@@ -220,6 +224,7 @@ body {
             .container-conteudo {
                 position: relative;
                 width: 100%;
+                height: 100%;
                 display: flex;
                 justify-content: center;
                 overflow-y: scroll;
@@ -229,7 +234,7 @@ body {
                     position: absolute;
                     width: 95%;
                     // height: 100%;
-                    padding: 20px;
+                    padding: 20px 0px;
                     border-radius: 5px;
                     animation: fade-down 1s forwards;
                     // border: solid 1px red;
@@ -246,27 +251,45 @@ body {
 
             }
 
-            .container-painel {
-                padding: 20px 10px;
-                width: 100%;
+            .coluna-painel {
+                position: relative;
+                padding: 15px 20px;
+                width: 300px;
                 height: 100%;
-                border: solid 1px red;
+                // border-left: solid 3px $corPrimaria;
+                background-color: $corSecundaria;
+                // border: solid 1px red;
+                transition: 1s;
+                animation: fade-in-painel 1s forwards;
 
-                .wrapper-menu-bar {
-                    display: flex;
-                    gap: 20px;
-    
-                    .btn-menu-bar {
-                        background: none;
-                        border: none;
-                        font-size: 18px;
-                        color: $corSecundariaDark;
-                        cursor: pointer;
-    
-                        &:hover {
-                            color: $corPrimaria;
-                        }
+                &.minimize {
+                    animation: fade-out-painel 1s forwards;
+                    width: 0px;
+                }
+
+                .btn-menu-bar {
+                    position: absolute;
+                    top: 5px;
+                    left: -35px;
+                    width: 35px;
+                    height: 35px;
+                    background-color: $corSecundaria;
+                    color: $corPrimaria;
+                    border: none;
+                    border-radius: 5px 0 0 5px;
+                    font-size: 15px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $corPrimaria;
+                        color: white;
                     }
+                }
+
+                .titulo {
+                    color: $corSecundariaDark;
+                    font-size: 15px;
+                    font-weight: 700;
                 }
             }
         }
@@ -274,10 +297,11 @@ body {
         .rodape {
             width: 100%;
             height: 25px;
-            margin-top: 10px;
+            // margin-top: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
+            border-top: solid 3px $corPrimaria;
 
             .creditos {
                 font-size: 12px;

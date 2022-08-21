@@ -7,6 +7,8 @@ const nomeUsuario = dadosUsuario.nome;
 const emailUsuario = dadosUsuario.email;
 const senhaUsuario = dadosUsuario.senha;
 
+let teste = 'darlan';
+teste.toUpperCase
 // ==================== VALIDA ACESSO ====================
 
 const validaAcesso = () => {
@@ -34,6 +36,15 @@ const minimizeMenu = () => {
     colunaMenu.classList.toggle('minimize');
 };
 btnMenuBar.addEventListener('click', minimizeMenu);
+
+// ==================== MENU BAR PAINEL ====================
+const btnMenuBarPainel = document.querySelector('#btnMenuBarPainel');
+const colunaPainel = document.querySelector('#colunaPainel');
+
+const minimizePainel = () => {
+    colunaPainel.classList.toggle('minimize');
+};
+btnMenuBarPainel.addEventListener('click', minimizePainel);
 
 // ==================== TITULO DA PÁGINA ====================
 const txtTitulo = document.querySelector('#txtTitulo');

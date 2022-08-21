@@ -52,3 +52,39 @@
         transform: translateX(0px);
     }
 }
+
+@keyframes fade-out-menu {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fade-in-menu {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fade-out-painel {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes fade-in-painel {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
