@@ -228,6 +228,11 @@ body {
     height: 100vh;
     border-radius: 0;
     box-shadow: none;
+    background-image: url(../img/background.jpg);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: 1s;
   }
 }
 
@@ -242,6 +247,7 @@ body {
 
 .modal.move .form {
   transform: translateX(100%);
+  transition: 1s;
 }
 
 @media (max-width: 760px) {
@@ -251,13 +257,19 @@ body {
 }
 
 .modal.move .form:nth-child(1) {
-  z-index: -1;
-  opacity: 0;
+  z-index: -1 !important;
+  opacity: 0 !important;
 }
 
 .modal.move .form:nth-child(2) {
   z-index: 1 !important;
   opacity: 1 !important;
+}
+
+@media (max-width: 760px) {
+  .modal.move {
+    background-position: right bottom;
+  }
 }
 
 .modal .form-container {
@@ -281,31 +293,20 @@ body {
 @media (max-width: 760px) {
   .modal .form-container .form {
     width: 100%;
-    background-image: url(../img/background.jpg);
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    background-position: left bottom;
+  }
+  .modal .form-container .form .titulo {
+    color: white !important;
+    text-shadow: 1px 1px 1px black !important;
+  }
+  .modal .form-container .form .texto {
+    color: white !important;
+    text-shadow: 1px 1px 1px black !important;
+  }
+  .modal .form-container .form .midias {
+    border: solid 2px white !important;
   }
   .modal .form-container .form.form-cadastro {
     transform: translateX(100%);
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .modal .form-container .form.form-cadastro .titulo {
-    color: white;
-    text-shadow: 1px 1px 1px black;
-  }
-  .modal .form-container .form.form-cadastro .texto {
-    color: white;
-    text-shadow: 1px 1px 1px black;
-  }
-  .modal .form-container .form.form-cadastro .midias {
-    border: solid 2px white;
-  }
-  .modal .form-container .form.form-cadastro .btn-form {
-    background-color: white;
-    color: #0096c4;
   }
 }
 
@@ -399,6 +400,25 @@ body {
   background: white;
   color: #0096c4;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+.modal .form-container .form .texto-mobile {
+  display: none;
+  background-color: rgba(0, 47, 61, 0.6);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 3px;
+  border-radius: 3px;
+  transition: .5s;
+}
+
+.modal .form-container .form .texto-mobile:hover {
+  background-color: #0096c4;
+}
+
+@media (max-width: 760px) {
+  .modal .form-container .form .texto-mobile {
+    display: block;
+  }
 }
 
 .modal .overlay-container {

@@ -54,6 +54,12 @@ body {
         height: 100vh;
         border-radius: 0;
         box-shadow: none;
+
+        background-image: url(../img/background.jpg);
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        transition: 1s;
     }
 
     &.move {
@@ -68,6 +74,7 @@ body {
 
         .form {
             transform: translateX(100%);
+            transition: 1s;
 
             @include mobile {
                 &.form-cadastro {
@@ -76,14 +83,19 @@ body {
             }
 
             &:nth-child(1) {
-                z-index: -1;
-                opacity: 0;
+                // transform: translateX(-100%);
+                z-index: -1 !important;
+                opacity: 0 !important;
             }
 
             &:nth-child(2) {
                 z-index: 1 !important;
                 opacity: 1 !important;
             }
+        }
+
+        @include mobile {
+            background-position: right bottom;
         }
 
     }
@@ -106,40 +118,23 @@ body {
 
             @include mobile {
                 width: 100%;
-                background-image: url(../img/background.jpg);
-                background-position: left bottom;
-                background-repeat: no-repeat;
-                background-position: left bottom;
-                // background-size: cover;
+
+                .titulo {
+                    color: white !important;
+                    text-shadow: 1px 1px 1px black !important;
+                }
+
+                .texto {
+                    color: white !important;
+                    text-shadow: 1px 1px 1px black !important;
+                }
+
+                .midias {
+                    border: solid 2px white !important;
+                }
 
                 &.form-cadastro {
                     transform: translateX(100%);
-                    // background-color: $corPrimaria;
-                    // background-image: url(../img/background.jpg);
-                    background-position: center bottom;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-
-                    .titulo {
-                        color: white;
-                        text-shadow: 1px 1px 1px black;
-                    }
-
-                    .texto {
-                        color: white;
-                        text-shadow: 1px 1px 1px black;
-                    }
-
-                    .midias {
-                        // background-color: white !important;
-                        // color: $corPrimaria !important;
-                        border: solid 2px white;
-                    }
-
-                    .btn-form {
-                        background-color: white;
-                        color: $corPrimaria
-                    }
                 }
             }
 
@@ -233,6 +228,23 @@ body {
                     background: white;
                     color: $corPrimaria;
                     box-shadow: $corSombra
+                }
+            }
+
+            .texto-mobile {
+                display: none;
+                background-color: rgba(0, 47, 61, 0.6);
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+                padding: 3px;
+                border-radius: 3px;
+                transition: .5s;
+
+                &:hover {
+                    background-color: $corPrimaria;
+                }
+
+                @include mobile {
+                    display: block;
                 }
             }
         }

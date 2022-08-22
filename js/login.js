@@ -5,6 +5,8 @@ import { setUsuario } from './usuario.js';
 function initMoveOverlay() {
     const btnOverCadastrar = document.querySelector('#btnOverCadastrar');
     const btnOverEntrar = document.querySelector('#btnOverEntrar');
+    const linkCadastrar = document.querySelector('#linkCadastrar');
+    const linkLogin = document.querySelector('#linkLogin');
     const modal = document.querySelector('#modal');
 
     const moveOverlay = () => {
@@ -13,6 +15,10 @@ function initMoveOverlay() {
     btnOverCadastrar.addEventListener('click', moveOverlay);
 
     btnOverEntrar.addEventListener('click', moveOverlay);
+
+    linkCadastrar.addEventListener('click', moveOverlay);
+
+    linkLogin.addEventListener('click', moveOverlay);
 }
 initMoveOverlay();
 
