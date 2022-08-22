@@ -246,19 +246,21 @@ body {
 }
 
 .modal.move .form {
-  transform: translateX(100%);
+  transform: translateX(100%) !important;
+  z-index: -1 !important;
+  opacity: 0 !important;
   transition: 1s;
 }
 
 @media (max-width: 760px) {
+  .modal.move .form.form-login {
+    transform: translateX(-100%) !important;
+    z-index: 1 !important;
+    opacity: 1 !important;
+  }
   .modal.move .form.form-cadastro {
     transform: translateX(0%) !important;
   }
-}
-
-.modal.move .form:nth-child(1) {
-  z-index: -1 !important;
-  opacity: 0 !important;
 }
 
 .modal.move .form:nth-child(2) {

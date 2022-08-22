@@ -73,19 +73,21 @@ body {
         }
 
         .form {
-            transform: translateX(100%);
+            transform: translateX(100%) !important;
+            z-index: -1 !important;
+            opacity: 0 !important;
             transition: 1s;
 
             @include mobile {
+                &.form-login {
+                    transform: translateX(-100%) !important;
+                    z-index: 1 !important;
+                    opacity: 1 !important;
+                }
+
                 &.form-cadastro {
                     transform: translateX(0%) !important;
                 }
-            }
-
-            &:nth-child(1) {
-                // transform: translateX(-100%);
-                z-index: -1 !important;
-                opacity: 0 !important;
             }
 
             &:nth-child(2) {
