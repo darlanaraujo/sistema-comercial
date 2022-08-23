@@ -1,10 +1,11 @@
+@import 'responsividade';
 
 .container-alerta {
 
     .modal-alerta {
         position: absolute;
         right: 0;
-        width: 400px;
+        max-width: 400px;
         background-color: white;
         border-radius: 10px 0 0 10px;
         display: grid;
@@ -22,6 +23,11 @@
 
         &.top {
             top: 20px;
+
+            @include mobile {
+                top: auto;
+                bottom: 70px;
+            }
         }
         
         &.active {

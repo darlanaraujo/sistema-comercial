@@ -2,13 +2,7 @@
 @import 'cores';
 @import 'animacoes';
 @import 'alertas';
-
-// Responsividade
-@mixin mobile {
-    @media (max-width: 760px) {
-        @content;
-    }
-}
+@import 'responsividade';
 
 body {
     background-image: url('../img/background.jpg');
@@ -20,13 +14,6 @@ body {
     // Responsividade
     @include mobile {
         background: none;
-    }
-}
-
-.container-alerta {
-    // Responsividade
-    @include mobile {
-        display: none;
     }
 }
 
