@@ -256,7 +256,7 @@ body {
   .modal.move .form.form-login {
     transform: translateX(-100%) !important;
     z-index: 1 !important;
-    opacity: 1 !important;
+    opacity: 0 !important;
   }
   .modal.move .form.form-cadastro {
     transform: translateX(0%) !important;
