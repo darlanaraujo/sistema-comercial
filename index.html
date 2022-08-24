@@ -30,8 +30,8 @@
                 <div class="form form-login">
                     <h1 class="titulo">Entrar com</h1>
                     <form action="" class="wrapper-input">
-                        <input class="input" id="txtGetEmail" type="email" placeholder="E-mail" required autofocus>
-                        <input class="input" id="txtGetSenha" type="password" placeholder="Senha" required>
+                        <input class="input" id="txtGetEmail" type="email" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required autofocus>
+                        <input class="input" id="txtGetSenha" type="password" placeholder="Senha" pattern="[A-z0-9]{3}" required>
                         <a href="#" class="link">Esqueceu a senha?</a>
                     </form>
                     <button class="btn-form" id="btnEntrar">Entrar</button>
@@ -49,9 +49,9 @@
                 <div class="form form-cadastro">
                     <h1 class="titulo">Criar conta</h1>
                     <form action="" class="wrapper-input">
-                        <input class="input" id="txtSetNome" type="text" placeholder="Nome completo" required autofocus>
-                        <input class="input" id="txtSetEmail" type="email" placeholder="E-mail" required>
-                        <input class="input" id="txtSetSenha" type="password" placeholder="Senha" required>
+                        <input class="input" id="txtSetNome" type="text" placeholder="Nome completo" pattern="[A-z]{3}" required autofocus>
+                        <input class="input" id="txtSetEmail" type="email" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                        <input class="input" id="txtSetSenha" type="password" placeholder="Senha" pattern="[A-z0-9]{3}" required>
                     </form>
                     <button class="btn-form" id="btnCadastrar">Cadastrar</button>
 

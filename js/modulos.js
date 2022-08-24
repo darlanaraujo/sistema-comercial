@@ -13,3 +13,23 @@ export const msgAlerta = (tipoAlerta, msg) => {
         }, 2500);
     }
 };
+
+export const erroInput = () => {
+    const inputs = document.querySelectorAll('input');
+
+    inputs.forEach((input) => {
+
+        if(input.hasAttribute('required')){
+
+            if(input.value === '') {
+                msgAlerta('erro', 'Campos obrigatórios...');
+                input.classList.add('erro');
+    
+                setTimeout(() => {
+                    input.classList.remove('erro');
+                }, 2000);
+            }
+        }
+
+    });
+}

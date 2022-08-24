@@ -1,3 +1,5 @@
+import { erroInput } from './modulos.js';
+
 // ACESSO AO BD ==============================================================
 const setBancoCadastros = (banco, dados) => {
     localStorage.setItem('banco', JSON.stringify(dados));
@@ -12,6 +14,7 @@ const btnCadastrarCliente = document.querySelector('#btnCadastrarCliente');
 const modal = document.querySelector('#modal');
 const janelaCadastro = document.querySelectorAll('.janela-cadastro');
 const janelaCliente = document.querySelector('#janelaCliente');
+const btnSalvar = document.querySelector('#btnSalvar');
 const btnCancelar = document.querySelector('#btnCancelar');
 
 const getModal = (janela) => {
@@ -29,3 +32,6 @@ const closeModal = () => {
     });
 };
 btnCancelar.addEventListener('click', closeModal);
+
+
+btnSalvar.addEventListener('click', erroInput);

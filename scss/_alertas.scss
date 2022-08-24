@@ -29,23 +29,23 @@
                 bottom: 70px;
             }
         }
-        
+
         &.active {
             transition: 1s;
             animation: alerta-enter 1s forwards;
         }
 
-        & > div {
+        &>div {
             padding: 15px;
         }
 
         &.alerta-erro {
             .logo {
-                background-color: $corErro !important;
+                background-color: $corErro  !important;
             }
 
             .titulo {
-                color: $corErro !important;
+                color: $corErro  !important;
             }
         }
 
@@ -57,7 +57,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            
+
             .img-logo {
                 width: 40px;
             }
@@ -74,7 +74,28 @@
 
         .texto {
             font-size: 14px;
-            
+
+        }
+
+        // Responsividade
+        @include mobile {
+            animation: fade-down 1s forwards;
+            display: block;
+            border-radius: 10px;
+            width: 80%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+
+            &.active {
+                transition: 1s;
+                animation: fade-up 1s forwards;
+            }
+
+            .logo {
+                display: none;
+            }
         }
 
     }

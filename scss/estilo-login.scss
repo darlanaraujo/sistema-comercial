@@ -5,6 +5,8 @@
 @import 'responsividade';
 
 body {
+    width: 100vw;
+    height: 100vh;
     background-image: url('../img/background.jpg');
     background-position: top center;
     background-repeat: no-repeat;
@@ -179,14 +181,7 @@ body {
                 gap: 15px;
 
                 .input {
-                    width: 100%;
-                    height: 45px;
-                    border-radius: 5px;
-                    border: solid 2px $corPrimaria;
-                    // background-color: $corCinza;
-                    padding: 5px 15px;
-                    outline: none;
-                    color: $corTexto;
+                    // padrão reset
                 }
 
                 .link {
@@ -302,4 +297,3 @@ body {
     }
 
 }
-

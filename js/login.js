@@ -1,4 +1,5 @@
 import { msgAlerta } from './modulos.js';
+import { erroInput } from './modulos.js';
 import { setUsuario } from './usuario.js';
 
 // Função que faz o efeito na tela de login;
@@ -77,6 +78,7 @@ const cadastrarUsuario = () => {
 
     if (nome === '' || email === '' || senha === '') {
         msgAlerta('erro', 'Preencha todos os dados...');
+        erroInput();
     } else {
         limpaInput();
         msgAlerta('confirmacao', 'Cadastro feito com sucesso...');
@@ -92,6 +94,7 @@ txtSetSenha.addEventListener('keydown', ({ key }) => {
             cadastrarUsuario();
         } else {
             msgAlerta('erro', 'Preencha todos os dados...');
+            erroInput();
         }
     }
 });
@@ -102,6 +105,9 @@ const verificaCadastro = () => {
 
     if (getEmail === '' || getSenha === '') {
         msgAlerta('erro', 'Preencha todos os dados...');
+
+        erroInput();
+
     } else {
 
         if (dadosLogin.length > 0) {
@@ -124,10 +130,14 @@ const verificaCadastro = () => {
                     }, 2000);
                 } else {
                     msgAlerta('erro', 'Usuário invalido...');
+                    
+                    erroInput();
                 }
             });
         } else {
             msgAlerta('erro', 'Usuário não cadastrado...');
+            
+            erroInput();
         }
 
     }
@@ -144,6 +154,7 @@ txtGetSenha.addEventListener('keydown', ({ key }) => {
             verificaCadastro();
         } else {
             msgAlerta('erro', 'Preencha todos os dados...');
+            erroInput();
         }
     }
 });

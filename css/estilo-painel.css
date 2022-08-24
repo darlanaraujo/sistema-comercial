@@ -26,6 +26,37 @@
   border-radius: 5px;
 }
 
+* input {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  border: solid 2px #f0f0f0;
+  padding: 5px 15px;
+  outline: none;
+  color: #282828;
+}
+
+* input:focus {
+  border: solid 2px #0096c4;
+  box-shadow: 0 0 3px rgba(0, 150, 196, 0.6);
+}
+
+* input.erro {
+  border: solid 2px rgba(183, 1, 1, 0.731);
+  box-shadow: 0 0 3px rgba(0, 150, 196, 0.6);
+  animation: erro forwards .3s 3;
+}
+
+* input:user-valid {
+  border: solid 2px #0096c4;
+  box-shadow: 0 0 3px rgba(0, 150, 196, 0.6);
+}
+
+* input:user-invalid {
+  border: solid 2px rgba(183, 1, 1, 0.731);
+  box-shadow: 0 0 3px rgba(183, 1, 1, 0.6);
+}
+
 @keyframes alerta-enter {
   from {
     transform: translateX(110%);
@@ -117,6 +148,24 @@
   }
 }
 
+@keyframes erro {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  0% {
+    transform: translateX(0px);
+  }
+}
+
 .container-alerta .modal-alerta {
   position: absolute;
   right: 0;
@@ -189,6 +238,26 @@
 
 .container-alerta .modal-alerta .texto {
   font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .container-alerta .modal-alerta {
+    animation: fade-down 1s forwards;
+    display: block;
+    border-radius: 10px;
+    width: 80%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+  }
+  .container-alerta .modal-alerta.active {
+    transition: 1s;
+    animation: fade-up 1s forwards;
+  }
+  .container-alerta .modal-alerta .logo {
+    display: none;
+  }
 }
 
 .clientes {
@@ -349,20 +418,6 @@
   padding: 20px;
   display: list-item;
   gap: 10px;
-}
-
-.modal.active .wrapper-modal .janela-cadastro .form .input {
-  border: solid 2px #0096c4;
-  border-radius: 5px;
-  padding: 5px;
-  outline: none;
-  width: 100%;
-  height: 45px;
-  margin-bottom: 10px;
-}
-
-.modal.active .wrapper-modal .janela-cadastro .form .input:invalid {
-  border: solid 2px #c40000;
 }
 
 .modal.active .wrapper-modal .janela-cadastro .form .input.grande {

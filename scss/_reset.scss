@@ -27,4 +27,36 @@
         background-color: transparent;
         border-radius: 5px;
     }
+
+    // input
+    input {
+        width: 100%;
+        height: 45px;
+        border-radius: 5px;
+        border: solid 2px $corSecundaria;
+        padding: 5px 15px;
+        outline: none;
+        color: $corTexto;
+        
+        &:focus {
+            border: solid 2px $corPrimaria;
+            box-shadow: 0 0 3px rgba($corPrimaria, .60);
+        }
+
+        &.erro {
+            border: solid 2px $corErroInput;
+            box-shadow: 0 0 3px rgba($corPrimaria, .60);
+            animation: erro forwards .3s 3;
+        }
+
+        &:user-valid {
+            border: solid 2px $corPrimaria;
+            box-shadow: 0 0 3px rgba($corPrimaria, .60);
+        }
+
+        &:user-invalid {
+            border: solid 2px $corErroInput;
+            box-shadow: 0 0 3px rgba($corErroInput, .60);
+        }
+    }
 }
