@@ -79,6 +79,8 @@ const cadastrarUsuario = () => {
     if (nome === '' || email === '' || senha === '') {
         // msgAlerta('erro', 'Preencha todos os dados...');
         erroInput('Campos obrigatórios...');
+    } else if (! txtSetNome.validity.valid || ! txtSetEmail.validity.valid || ! txtSetSenha.validity.valid) {
+        erroInput('Dados invalidos...');
     } else {
         limpaInput();
         msgAlerta('confirmacao', 'Cadastro feito com sucesso...');
@@ -130,13 +132,13 @@ const verificaCadastro = () => {
                     }, 2000);
                 } else {
                     // msgAlerta('erro', 'Usuário invalido...');
-                    
+
                     erroInput('Usuário invalido...');
                 }
             });
         } else {
             // msgAlerta('erro', 'Usuário não cadastrado...');
-            
+
             erroInput('Usuário não cadastrado...');
         }
 

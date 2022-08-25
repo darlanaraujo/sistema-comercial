@@ -54,10 +54,10 @@
             animation: erro forwards .3s 3;
         }
 
-        // &:user-valid {
-        //     border: solid 2px $corPrimaria;
-        //     box-shadow: 0 0 3px rgba($corPrimaria, .60);
-        // }
+        &:valid {
+            border: solid 2px $corPrimaria;
+            box-shadow: 0 0 3px rgba($corPrimaria, .60);
+        }
 
         &:-moz-ui-valid {
             border: solid 2px $corPrimaria;

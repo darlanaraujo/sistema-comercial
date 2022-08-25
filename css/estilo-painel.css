@@ -52,6 +52,11 @@
   animation: erro forwards .3s 3;
 }
 
+* input:valid {
+  border: solid 2px #0096c4;
+  box-shadow: 0 0 3px rgba(0, 150, 196, 0.6);
+}
+
 * input:-moz-ui-valid {
   border: solid 2px #0096c4;
   box-shadow: 0 0 3px rgba(0, 150, 196, 0.6);
@@ -175,6 +180,7 @@
   position: absolute;
   right: 0;
   max-width: 400px;
+  min-width: 250px;
   background-color: white;
   border-radius: 10px 0 0 10px;
   display: grid;

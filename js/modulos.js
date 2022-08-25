@@ -28,11 +28,14 @@ export const erroInput = (msg) => {
                 setTimeout(() => {
                     input.classList.remove('erro');
                 }, 2000);
+            } else if (! input.validity.valid) {
+                msgAlerta('erro', msg);
+                input.classList.add('erro');
+    
+                setTimeout(() => {
+                    input.classList.remove('erro');
+                }, 2000);
             }
-
-            return false;
-        } else {
-            return true;
         }
 
     });
