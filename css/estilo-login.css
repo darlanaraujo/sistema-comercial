@@ -41,18 +41,23 @@
   box-shadow: 0 0 3px rgba(0, 150, 196, 0.6);
 }
 
+* input:focus:invalid {
+  border: solid 2px rgba(183, 1, 1, 0.731);
+  box-shadow: 0 0 3px rgba(183, 1, 1, 0.6);
+}
+
 * input.erro {
   border: solid 2px rgba(183, 1, 1, 0.731);
   box-shadow: 0 0 3px rgba(0, 150, 196, 0.6);
   animation: erro forwards .3s 3;
 }
 
-* input:user-valid {
+* input:-moz-ui-valid {
   border: solid 2px #0096c4;
   box-shadow: 0 0 3px rgba(0, 150, 196, 0.6);
 }
 
-* input:user-invalid {
+* input:-moz-ui-invalid {
   border: solid 2px rgba(183, 1, 1, 0.731);
   box-shadow: 0 0 3px rgba(183, 1, 1, 0.6);
 }

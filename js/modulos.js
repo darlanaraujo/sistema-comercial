@@ -14,7 +14,7 @@ export const msgAlerta = (tipoAlerta, msg) => {
     }
 };
 
-export const erroInput = () => {
+export const erroInput = (msg) => {
     const inputs = document.querySelectorAll('input');
 
     inputs.forEach((input) => {
@@ -22,13 +22,17 @@ export const erroInput = () => {
         if(input.hasAttribute('required')){
 
             if(input.value === '') {
-                msgAlerta('erro', 'Campos obrigatórios...');
+                msgAlerta('erro', msg);
                 input.classList.add('erro');
     
                 setTimeout(() => {
                     input.classList.remove('erro');
                 }, 2000);
             }
+
+            return false;
+        } else {
+            return true;
         }
 
     });

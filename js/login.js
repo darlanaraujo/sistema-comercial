@@ -77,8 +77,8 @@ const cadastrarUsuario = () => {
     const senha = txtSetSenha.value;
 
     if (nome === '' || email === '' || senha === '') {
-        msgAlerta('erro', 'Preencha todos os dados...');
-        erroInput();
+        // msgAlerta('erro', 'Preencha todos os dados...');
+        erroInput('Campos obrigatórios...');
     } else {
         limpaInput();
         msgAlerta('confirmacao', 'Cadastro feito com sucesso...');
@@ -93,8 +93,8 @@ txtSetSenha.addEventListener('keydown', ({ key }) => {
         if (txtSetNome != '' && txtSetEmail != '' && txtSetSenha != '') {
             cadastrarUsuario();
         } else {
-            msgAlerta('erro', 'Preencha todos os dados...');
-            erroInput();
+            // msgAlerta('erro', 'Preencha todos os dados...');
+            erroInput('Campos obrigatórios...');
         }
     }
 });
@@ -104,9 +104,9 @@ const verificaCadastro = () => {
     const getSenha = txtGetSenha.value;
 
     if (getEmail === '' || getSenha === '') {
-        msgAlerta('erro', 'Preencha todos os dados...');
+        // msgAlerta('erro', 'Preencha todos os dados...');
 
-        erroInput();
+        erroInput('Campos obrigatórios...');
 
     } else {
 
@@ -129,15 +129,15 @@ const verificaCadastro = () => {
                         window.location.href = './painel.html';
                     }, 2000);
                 } else {
-                    msgAlerta('erro', 'Usuário invalido...');
+                    // msgAlerta('erro', 'Usuário invalido...');
                     
-                    erroInput();
+                    erroInput('Usuário invalido...');
                 }
             });
         } else {
-            msgAlerta('erro', 'Usuário não cadastrado...');
+            // msgAlerta('erro', 'Usuário não cadastrado...');
             
-            erroInput();
+            erroInput('Usuário não cadastrado...');
         }
 
     }
@@ -158,3 +158,5 @@ txtGetSenha.addEventListener('keydown', ({ key }) => {
         }
     }
 });
+
+
